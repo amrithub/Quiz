@@ -1,19 +1,39 @@
 # ****Software Development Plan****
 ## **Statement of Purpose and Scope**
-#### Purpose of the application:
-##### The project is aimed towards the learners of programmers to test their knowledge and skills in ruby programming. 
+#### **Purpose of the application:**
+##### At its most enhanced level, the application can allow the user to select the level of test (easy,medium, hard) and provide access to numerous questions if database system is implemented.The project is aimed towards the learners of programmers to test their knowledge and skills in ruby programming. The application can be used for other fields as well but the main objective of the application still remains to help the students test their knowledge.
+##### As the project limits the scope to terminal only as per the specification, despite the lack of graphics, the application will definitely solve the problem relevant to the conduction of multiple choice objective test. 
+
+##### A user can start the use the application as per the steps below:
+* User enters his/her name
+* user then chooses the number of questions he/she want to play.
+* First question appears on the terminal with foru possible answers and asks the user to choose one of the possible answers.
+* Tehn next question is displayed followed by the third,fourth and so on until the final question is diplayed.
+* Once the user enters the answer of the last question, the final score and the list of all correct answers are displayed on the screen.
+
+
 #### Scope of the application:
 #####  The scope of this project can be outlined as below:
-###### **Project Scope:**  This application us based on Ruby programming language regarding the coding part and is documented in MarkDown language.
+##### Project Scope:  This application us based on Ruby programming language regarding the coding part and is documented in MarkDown language.
 
-###### **Product Scope:** The project includes a ruby programme that stores a number of questions and their multiple choice answers choses three questions randomly and displays the total score obtained by the user and the list of all correct answers.
+##### Product Scope: The project includes a ruby programme that stores a number of questions and their multiple choice answers choses three questions randomly and displays the total score obtained by the user and the list of all correct answers.
 
-<!-- ### Develop a statement of purpose and scope for your application. It must include:
-#### Purpose of the application:
+<!--  describe at a high level what the application will do
 - identify the problem it will solve and explain why you are developing it
 - identify the target audience 
 - explain how a member of the target audience will use it -->
 ## **Features**
+#### The following are the main features of this terminal application
+### **User Introduction :**
+##### As soon as the program is run, the terminal asks the user to enter his/her name and welcomes to the game. 
+### **User Choice :** 
+##### The user can choose the number of questions he/she want to play. For example if a player wants 10 questions, the applicatoin provides only 10 questions. The questions are randomly selected and gets never repeated in the same game. 
+### **Acknowledges the user about the response:**
+##### EAch time the user enters the response, the application immediately acknowledges whether it is correct or not.
+### **Final Score and list of correct answers:**
+##### After the user answers all the questions that he chose, the terminla displays the total score obtained and the list of all the correct answers in the correct order.
+##### Also, The features can be  summarized as below in terms of basic and advanced qualities:
+
 ### **The Basic Features:**
  
 * One player can play at a time
