@@ -24,14 +24,16 @@
 - explain how a member of the target audience will use it -->
 ## **Features**
 #### The following are the main features of this terminal application
-### **User Introduction :**
-##### As soon as the program is run, the terminal asks the user to enter his/her name and welcomes to the game. 
-### **User Choice :** 
+<!-- ### **User Introduction :**
+##### As soon as the program is run, the terminal asks the user to enter his/her name and welcomes to the game.  -->
+### **User's Choice :** 
 ##### The user can choose the number of questions he/she want to play. For example if a player wants 10 questions, the applicatoin provides only 10 questions. The questions are randomly selected and gets never repeated in the same game. 
 ### **Acknowledges the user about the response:**
 ##### EAch time the user enters the response, the application immediately acknowledges whether it is correct or not.
 ### **Final Score and list of correct answers:**
 ##### After the user answers all the questions that he chose, the terminla displays the total score obtained and the list of all the correct answers in the correct order.
+### **Handles Error**
+##### Whenever a user enters invalid input, he/she is asked to enter the valid input without terminating the program. For example, if the user enters 'g' for the number of questions he/she wants to face, the terminal asks the user to enter an valid input which is an integer between 1 to 10
 ##### Also, The features can be  summarized as below in terms of basic and advanced qualities:
 
 ### **The Basic Features:**
@@ -41,10 +43,17 @@
 * Each question has four possible answers
 * The application should display the final score of the player and the list of all correct answers in sequence 
 
-#### ** The Extended Features:**
+#### **The Extended Features:**
 * The application can be extended by the use of database to enable more options to the user and uplift the scope of the project.
 * separate buttons and levels for a better, friendly and more practical purpose.
 
 
-## User Interaction and Experience
-## Control flow diagram
+## **User Interaction and Experience** 
+##### User can get the guidance (how to start and play the game) by looking into a help file which is written in MarkDown language. 
+##### If the user enters a number > 10
+##### User also gets the infromation regarding the valid inputs (multiple choice question answers) which can be either 'a', 'b', 'c' or 'd'.
+##### If user enters an invalid response, the application guides the user with a proper message. For example, if the user enters 'e' as a response, the console displays 'Please enter the valid response ('a', 'b', 'c' or 'd').
+
+
+## **Control flow diagram**
+##### The overall flow chart of the ruby based programme is as below:
