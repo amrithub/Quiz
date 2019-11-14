@@ -13,7 +13,7 @@ def Quiz(qBank)
     # puts qBankO[1]
     # puts qBankO[2]
     print item
-    puts
+    puts "Doing Great"
     a = gets.chomp
     if item == qBankO[0]
         if 
