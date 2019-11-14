@@ -8,10 +8,7 @@ def Quiz(qBank)
     
     item = qBank[rand(qBank.length)]
     
-    #puts "item is : #{item}"
-    # puts qBankO[0]
-    # puts qBankO[1]
-    # puts qBankO[2]
+    puts " I     AM                AMRIT"
     print item
     puts "Doing Great"
     a = gets.chomp
@@ -120,3 +117,4 @@ camp = ["This is blue".colorize(:blue), "This is blue".colorize(:red), "This is 
 item = camp[rand(camp.length)]
 
 puts item
+puts "This is Australia"
