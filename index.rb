@@ -1,4 +1,7 @@
 require 'colorize'
+require 'artii'
+a = Artii::Base.new
+puts a.asciify('Quiz by Amrit Sagar Khanal').colorize(:blue)
 
 
 def Quiz(qBank)
