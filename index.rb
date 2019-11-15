@@ -86,8 +86,8 @@ end
 #k = m.class
 #puts k
 # if m > 10 or m == 0 or m.class != Integer
-#     puts "Invalid input"#. Please enter an integer between 1 to 10 only!!!!!"
-    
+puts "Invalid input"#. Please enter an integer between 1 to 10 only!!!!!"
+puts
 
 # end
 
