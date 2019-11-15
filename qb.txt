@@ -1,0 +1,11 @@
+1. Which of the following is supported by Ruby? 
+a) Multiple Programming Paradigms   b) Dynamic Type System    c) Automatic Memory Management    d) All of the Mentioned
+2. Which of the following features does the 2.0 version of ruby supports?
+a) Method keyword arguments     b) New literals     c) Security fixes   d) All of the mentioned
+3. What is the size of an integer data type in ruby?
+a) -230 to 230     b) -230 to 2(30-1)     c) -229 to 230   d) -260 to 261
+4. Which of the following languages syntax matches with the Ruby’s syntax?
+a) Perl    b) PHP      c) Java     d) Jquery
+5. What is the extension used for saving the ruby file?     
+a) .ruby extension      b) .rb extension       c) .rrb extension       d) None of the mentionedamrit
+

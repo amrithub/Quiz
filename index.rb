@@ -5,22 +5,39 @@ puts a.asciify('Quiz by Amrit Sagar Khanal').colorize(:blue)
 
 
 def Quiz(qBank)
-    qBankO =  ["what is the capital of Nepal? \n a. Kathmandu    b.Delhi     c. Sydney       d. Pokhara", "who is the president of USA? \n a. V. Putin      b. Justin Limbu     c. Yamaha Gamaguchi     d.Donald Trump",
-    "what is the cause of fear? \n a. pain      b. gain     c.  nothing     d. all of above"]
-    #puts   " qBank Malladi: #{qBankO}"
+    # qBankO = []
+    # File.open("qb.txt").each do|line|
+    #     qBankO.append(line)
+    # end
+    #puts qBankO ddbab
+    # qBankO =  ["what is the capital of Nepal? \n a. Kathmandu    b.Delhi     c. Sydney       d. Pokhara", "who is the president of USA? \n a. V. Putin      b. Justin Limbu     c. Yamaha Gamaguchi     d.Donald Trump",
+    # "what is the cause of fear? \n a. pain      b. gain     c.  nothing     d. all of above"]
+    # #puts   " qBank Malladi: #{qBankO}"
     
+    #print qBankO
+    qbank = []
+    qBankO = []
+    File.open("qb.txt").each do|line|
+        qbank.append(line)
+    end
+    i = 0
+    for j in 0..4
+        
+        qBankO[j] = qbank[i] + qbank[i+1]
+        i += 2
+    end
     item = qBank[rand(qBank.length)]
     
     puts " I     AM                AMRIT"
     print item
-    puts "Doing Great"
+    puts "Doing Good"
     a = gets.chomp
     if item == qBankO[0]
         if 
-            a == 'a'
-            return [1,item,'Kathmandu']
+            a == 'd'
+            return [1,item,'All of the above']
         else
-            return [0,item,'Kathmandu'] 
+            return [0,item,'All of the above'] 
         end
     
     # puts "Lets seeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"   
@@ -32,27 +49,58 @@ def Quiz(qBank)
         
         if 
             a == 'd'
-            return [1,item,'Donald Trump']
+            return [1,item,'All of the above']
         else
-            return [0,item,'Donald Trump'] 
+            return [0,item,'All of the above'] 
         end    
     elsif item == qBankO[2]
         if 
-            a == 'c'
-            return [1,item,'Nothing']
+            a == 'b'
+            return [1,item,'-230 to 2(30-1) ']
         else
-            return [0,item,'Nothing'] 
+            return [0,item,'-230 to 2(30-1) '] 
+        end
+    elsif item == qBankO[3]
+        if  a == 'a'  
+            return [1,item,'Perl ']
+        else
+            return [0,item,'Perl '] 
+        end
+    elsif item == qBankO[4] 
+        if a == 'b'
+            return [1,item,'.rb extension ']
+        else
+            return [0,item,'.rb extension '] 
         end
     # else 
+    
     #     return [0,item,a]
 
     end
     puts
 end
-qBank =  ["what is the capital of Nepal? \n a. Kathmandu    b.Delhi     c. Sydney       d. Pokhara", "who is the president of USA? \n a. V. Putin      b. Justin Limbu     c. Yamaha Gamaguchi     d.Donald Trump",
-"what is the cause of fear? \n a. pain      b. gain     c.  nothing     d. all of above"]
-puts
-qBankO = qBank
+qbank = []
+qBank = []
+File.open("qb.txt").each do|line|
+    qbank.append(line)
+end
+i = 0
+for j in 0..4
+    
+    qBank[j] = qbank[i] + qbank[i+1]
+    i += 2
+end
+#qBankO = qBank
+print qBank
+#     #puts line
+# for i in 1..5
+#     puts array[-i]
+# end
+# 
+# qBank =  ["what is the capital of Nepal? \n a. Kathmandu    b.Delhi     c. Sydney       d. Pokhara", "who is the president of USA? \n a. V. Putin      b. Justin Limbu     c. Yamaha Gamaguchi     d.Donald Trump",
+# "what is the cause of fear? \n a. pain      b. gain     c.  nothing     d. all of above"]
+# puts
+#qBankO = qBank
 # " qBank halladi: #{qBankO}"
 score = 0
 
@@ -92,10 +140,12 @@ puts
 # end
 
 answers = []
+
 for i in 1..m
-     #print "qBankO : #{qBankO}"
+    # print "qBankO : #{qBankO}"
      a = Quiz(qBank)
      #print a
+     print "flag"
      score += a[0]
      qBank.delete(a[1])
      answers.append(a[2])
@@ -110,14 +160,26 @@ puts "Anyway, here are the correct answers:".colorize(:blue)
 puts "answers:"
 puts 
 puts answers
+puts "The recent score is below. Compare your perforamnce wwith other's"
+
+File.open("scoreboard.txt",'a') do |line|
+    # puts "The score card looks as below"
+ 
+             line.puts "#{name}:  #{score}"
+
+end
+File.readlines('scoreboard.txt').last(5).each do |line|
+    puts line
+  end
 #end
 #a = Quiz()
 #print 'a'
 #item = qBank[rand(qBank.length)]
-camp = ["This is blue".colorize(:blue), "This is blue".colorize(:red), "This is blue".colorize(:yellow)]
+# camp = ["This is blue".colorize(:blue), "This is blue".colorize(:red), "This is blue".colorize(:yellow)]
 
-#puts "This is blue".colorize(:blue)
-item = camp[rand(camp.length)]
+# #puts "This is blue".colorize(:blue)
+# item = camp[rand(camp.length)]
 
-puts item
-puts "This is Australia"
+# puts item
+# puts "This is Australia"
+
