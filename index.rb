@@ -1,7 +1,14 @@
+name1 = ARGV
+#name.to_s
+
+name = name1[0]
+print name
+ARGV.clear
 require 'colorize'
 require 'artii'
 a = Artii::Base.new
 puts a.asciify('Quiz by Amrit Sagar Khanal').colorize(:blue)
+
 
 
 def Quiz(qBank)
@@ -17,6 +24,9 @@ def Quiz(qBank)
         i += 2
     end
     item = qBank[rand(qBank.length)]
+    item1 = item
+    # item1[0,1] = ''
+    # print "Awesome #{x}"
     print item
     
     a = gets.chomp
@@ -56,18 +66,7 @@ def Quiz(qBank)
     end
     puts
 end
-qbank = []
-qBank = []
-File.open("qb.txt").each do|line|
-    qbank.append(line)
-end
-i = 0
-for j in 0..4
-    
-    qBank[j] = qbank[i] + qbank[i+1]
-    i += 2
-end
-score = 0
+
 
 #b = 5
 # rescue TypeError
@@ -75,23 +74,42 @@ score = 0
 # rescue
 #     puts "some other standard Error handled"
 
+# name = ARGV
+# #puts name.length
+# puts name.to_s
+# puts "Please enter your name:".colorize(:red)
+# name = gets.chomp
 
-puts "Please enter your name:".colorize(:red)
-name = gets.chomp
-puts "Press p for practice and t for tournament"
-mode = gets.chomp
-if mode == 'p'
-    puts "How many questions do you want to take?"
-    m = gets.chomp.to_i
-
-    while m > 10 or m < 1
-    
-        puts "You entered invalid input. Please enter an integer between 1 to 10"
-        m = gets.chomp.to_i
+def continue(name)
+    qbank = []
+    qBank = []
+    File.open("qb.txt").each do|line|
+        qbank.append(line)
     end
-else
-    m = 5
-end
+    i = 0
+    for j in 0..4
+        
+        qBank[j] = qbank[i] + qbank[i+1]
+        i += 2
+    end
+    qBank1 = qBank
+    score = 0
+    puts "Press p for practice and t for tournament"
+    mode = gets.chomp.to_s
+    if mode == 'p'
+        puts "How many questions do you want to take?"
+        m = gets.chomp.to_i
+
+        while m > 10 or m < 1
+    
+            puts "You entered invalid input. Please enter an integer between 1 to 10"
+            m = gets.chomp.to_i
+        
+        end
+    else
+        m =  5
+    end
+
 # begin
 #     name = gets.chomp
 #     puts "How many quwstions do you want to take?"
@@ -105,42 +123,56 @@ end
 #puts k
 # if m > 10 or m == 0 or m.class != Integer
 
-puts
+
 
 # end
 
-answers = []
+    answers = []
 
-for i in 1..m
+    for i in 1..m
     # print "qBankO : #{qBankO}"
-     a = Quiz(qBank)
-     score += a[0]
-     qBank.delete(a[1])
-     answers.append(a[2])
+        a = Quiz(qBank)
+        score += a[0]
+        qBank.delete(a[1])
+        answers.append(a[2])
     #  print "return array is: \n"
     #  print a
-end
+    end
+
 #print a
-puts "#{name},".colorize(:blue)
-puts "your Score is: #{score}"
-puts
-puts "Anyway, here are the correct answers:".colorize(:blue)
-puts "answers:"
-puts 
-puts answers
+    puts "#{name},".colorize(:blue)
+    puts "your Score is: #{score}"
+    puts
+    puts "Anyway, here are the correct answers:".colorize(:blue)
+    puts "answers:"
+    puts 
+    puts answers
 
-if m == 5 and mode == 't'
-    puts "The recent score is below. Compare your perforamnce wwith other's"
-    File.open("scoreboard.txt",'a') do |line|
-    # puts "The score card looks as below"
- 
-             line.puts "#{name}:            #{score}"
+    if m == 5 and mode == 't'
+        puts "The recent score is below. Compare your perforamnce wwith other's"
+        File.open("scoreboard.txt",'a') do |line|
+        # puts "The score card looks as below"
+    
+                line.puts "#{name}:      #{score}"
 
+        end
+        File.readlines('scoreboard.txt').last(5).each do |line|
+            puts line
+        end
+    
+        
+
+
+        
     end
-    File.readlines('scoreboard.txt').last(5).each do |line|
-        puts line
-    end
+    puts "Do you want to play more? press c to continue and e to exit"
+        q = gets.chomp
+        if q == 'c'
+            continue(name)
+        end
 end
+continue(name)
+
 #a = Quiz()
 #print 'a'
 #item = qBank[rand(qBank.length)]
