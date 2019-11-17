@@ -8,7 +8,7 @@
 * User enters his/her name
 * user then chooses the number of questions he/she want to play.
 * First question appears on the terminal with foru possible answers and asks the user to choose one of the possible answers.
-* Tehn next question is displayed followed by the third,fourth and so on until the final question is diplayed.
+* Then next question is displayed followed by the third,fourth and so on until the final question is diplayed.
 * Once the user enters the answer of the last question, the final score and the list of all correct answers are displayed on the screen.
 
 
@@ -26,10 +26,10 @@
 #### The following are the main features of this terminal application
 <!-- ### **User Introduction :**
 ##### As soon as the program is run, the terminal asks the user to enter his/her name and welcomes to the game.  -->
-### **User's Choice :** 
+### **User's Input and output :** 
 ##### The user can choose the number of questions he/she want to play. For example if a player wants 10 questions, the applicatoin provides only 10 questions. The questions are randomly selected and gets never repeated in the same game. 
-### **Acknowledges the user about the response:**
-##### EAch time the user enters the response, the application immediately acknowledges whether it is correct or not.
+### **Multimode**
+##### This application provides two modes. One is practice mode and another is Tournament mode. The user can chose the mode and keep on playing.
 ### **Final Score and list of correct answers:**
 ##### After the user answers all the questions that he chose, the terminla displays the total score obtained and the list of all the correct answers in the correct order.
 ### **Handles Error**
@@ -49,7 +49,7 @@
 
 
 ## **User Interaction and Experience** 
-##### User can get the guidance (how to start and play the game) by looking into a help file which is written in MarkDown language. 
+##### User can get the guidance (how to start and play the game) by looking into a help file which is written in MarkDown language. The file will guide the user how to enter the input and chose the mode of the game which may be practice mode or tournament mode
 ##### If the user enters a number > 10
 ##### User also gets the infromation regarding the valid inputs (multiple choice question answers) which can be either 'a', 'b', 'c' or 'd'.
 ##### If user enters an invalid response, the application guides the user with a proper message. For example, if the user enters 'e' as a response, the console displays 'Please enter the valid response ('a', 'b', 'c' or 'd').

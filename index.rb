@@ -2,7 +2,7 @@ name1 = ARGV
 #name.to_s
 
 name = name1[0]
-print name
+#print name
 ARGV.clear
 require 'colorize'
 require 'artii'
@@ -12,74 +12,25 @@ puts a.asciify('Quiz by Amrit Sagar Khanal').colorize(:blue)
 
 
 def Quiz(qBank)
-    qbank = []
-    qBankO = []
-    File.open("qb.txt").each do|line|
-        qbank.append(line)
-    end
-    i = 0
-    for j in 0..4
-        
-        qBankO[j] = qbank[i] + qbank[i+1]
-        i += 2
-    end
-    item = qBank[rand(qBank.length)]
-    item1 = item
-    # item1[0,1] = ''
-    # print "Awesome #{x}"
-    print item
+    
+    item1 = qBank[rand(qBank.length)]
+    item = item1.clone
+    item3 = item1.clone
+    item4 = item1.clone
+    item5 = item1.clone
+    item5[0,1] = ''
+    x = item3[0,1] 
+    
+    puts item5
     
     a = gets.chomp
-    if item == qBankO[0]
-        if 
-            a == 'd'
-            return [1,item,'All of the above']
-        else
-            return [0,item,'All of the above'] 
-        end
-    elsif item == qBankO[1] 
-        if 
-            a == 'd'
-            return [1,item,'All of the above']
-        else
-            return [0,item,'All of the above'] 
-        end    
-    elsif item == qBankO[2]
-        if 
-            a == 'b'
-            return [1,item,'-230 to 2(30-1) ']
-        else
-            return [0,item,'-230 to 2(30-1) '] 
-        end
-    elsif item == qBankO[3]
-        if  a == 'a'  
-            return [1,item,'Perl ']
-        else
-            return [0,item,'Perl '] 
-        end
-    elsif item == qBankO[4] 
-        if a == 'b'
-            return [1,item,'.rb extension ']
-        else
-            return [0,item,'.rb extension '] 
-        end
+    if  a == x
+        return [1,item4]
+    else 
+        return [0,item4]
     end
-    puts
 end
-
-
-#b = 5
-# rescue TypeError
-#     puts "TypeError handled"
-# rescue
-#     puts "some other standard Error handled"
-
-# name = ARGV
-# #puts name.length
-# puts name.to_s
-# puts "Please enter your name:".colorize(:red)
-# name = gets.chomp
-
+     
 def continue(name)
     qbank = []
     qBank = []
@@ -92,19 +43,28 @@ def continue(name)
         qBank[j] = qbank[i] + qbank[i+1]
         i += 2
     end
-    qBank1 = qBank
+    #qBank1 = qBank
     score = 0
-    puts "Press p for practice and t for tournament"
-    mode = gets.chomp.to_s
-    if mode == 'p'
-        puts "How many questions do you want to take?"
-        m = gets.chomp.to_i
-
-        while m > 10 or m < 1
     
-            puts "You entered invalid input. Please enter an integer between 1 to 10"
-            m = gets.chomp.to_i
+    puts "Press p for practice and any other key for tournament"
+    mode = gets.chomp.to_s
+    
+    if mode == 'p'
         
+        begin 
+            puts "How many questions do you want to take?"
+            m = gets.chomp.to_i
+            puts m
+            4/m
+        rescue
+           
+        
+
+            while m > 5 or m < 1
+        
+                puts "You entered invalid input. Please enter an integer between 1 to 5"
+                m = gets.chomp.to_i
+            end
         end
     else
         m =  5
@@ -128,25 +88,33 @@ def continue(name)
 # end
 
     answers = []
-
+    qBA = []
     for i in 1..m
     # print "qBankO : #{qBankO}"
         a = Quiz(qBank)
+        
         score += a[0]
+        
         qBank.delete(a[1])
-        answers.append(a[2])
-    #  print "return array is: \n"
-    #  print a
+        
     end
 
 #print a
-    puts "#{name},".colorize(:blue)
-    puts "your Score is: #{score}"
+    #puts "#{name},".colorize(:blue)
+    require 'artii'
+    a = Artii::Base.new
+    puts a.asciify(name).colorize(:blue)
+    puts "your Score is: "
+    require 'artii'
+    a = Artii::Base.new
+
+    puts a.asciify(score).colorize(:yellow)
+    
     puts
     puts "Anyway, here are the correct answers:".colorize(:blue)
     puts "answers:"
     puts 
-    puts answers
+    #puts answers
 
     if m == 5 and mode == 't'
         puts "The recent score is below. Compare your perforamnce wwith other's"
