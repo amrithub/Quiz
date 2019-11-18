@@ -58,6 +58,9 @@
 ## **Control flow diagram**
 ##### The overall flow chart of the ruby based programme is as below:
 
+
+# **Project Implementation Plan**
+
 | features            | Checklist                                                                                                                                                                                                                                                                                                         | Priority | deadline   |
 |---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|------------|
 | User Input          | * Deterrmine the data structure of input * Determine the range of user input * apply conditional statements * Apply for loop and while loop * Apply a method for a more effective design * Test the inputs with different users who    know nothing about my project.                                             | High     | 18/11/2019 |
