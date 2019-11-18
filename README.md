@@ -57,3 +57,9 @@
 
 ## **Control flow diagram**
 ##### The overall flow chart of the ruby based programme is as below:
+
+| features            | Checklist                                                                                                                                                                                                                                                                                                         | Priority | deadline   |
+|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|------------|
+| User Input          | * Deterrmine the data structure of input * Determine the range of user input * apply conditional statements * Apply for loop and while loop * Apply a method for a more effective design * Test the inputs with different users who    know nothing about my project.                                             | High     | 18/11/2019 |
+| Multimode           | * Determine number of modes. * Use if statement to switch to different modes. * Use different loops. * Use methods as required. * Test the modes with different users.                                                                                                                                            | low      | 19/11/2019 |
+| Perpetual operation | * Determine if perpetual operation is desirable or not. * Determine where to restart the execution. * Use if statement for to continually run the program. * Use a method to call the game as long as the user  wants. * Test for this feature with different people who are    not familiar to your application. | mdium    | 19/11/2019 |
