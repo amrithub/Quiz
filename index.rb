@@ -2,6 +2,11 @@ name1 = ARGV
 #name.to_s
 
 name = name1[0]
+puts name
+if name == nil
+    puts "Please enter your name"
+    name = gets.chomp
+end
 #print name
 ARGV.clear
 require 'colorize'
@@ -21,9 +26,14 @@ def Quiz(qBank)
     item5[0,1] = ''
     x = item3[0,1] 
     
-    puts item5
+    puts item5.colorize(:cyan).bold
     
     a = gets.chomp
+    # Error handling in case the user enters invalid response
+     while a != 'a' and a !=  'b' and a!= 'c' and a!= 'd' 
+        puts " you entered invalid response. Press 'a' or 'b' or 'c' or 'd' only".colorize(:red).bold
+        a = gets.chomp
+    end
     if  a == x
         return [1,item4]
     else 
@@ -38,7 +48,7 @@ def continue(name)
         qbank.append(line)
     end
     i = 0
-    for j in 0..4
+    for j in 0..9
         
         qBank[j] = qbank[i] + qbank[i+1]
         i += 2
@@ -46,15 +56,14 @@ def continue(name)
     #qBank1 = qBank
     score = 0
     
-    puts "Press p for practice and any other key for tournament"
+    puts "Press p for practice and any other key for tournament".blue.on_yellow.bold
     mode = gets.chomp.to_s
     
     if mode == 'p'
-        
+     # ERROR HANDLING (if the user enters invalid input for example 12, a,'asdsad')   
         begin 
-            puts "How many questions do you want to take?"
+            puts "How many questions do you want to take?".cyan.on_yellow.bold
             m = gets.chomp.to_i
-            puts m
             4/m
         rescue
            
@@ -70,22 +79,10 @@ def continue(name)
         m =  5
     end
 
-# begin
-#     name = gets.chomp
-#     puts "How many quwstions do you want to take?"
-#     m = gets.chomp.to_i
-# rescue TypeError
-#         puts "TypeError handled"
-# rescue
-#         puts "some other standard Error handled"
-# end
-#k = m.class
-#puts k
-# if m > 10 or m == 0 or m.class != Integer
 
 
 
-# end
+
 
     answers = []
     qBA = []
@@ -104,24 +101,33 @@ def continue(name)
     require 'artii'
     a = Artii::Base.new
     puts a.asciify(name).colorize(:blue)
-    puts "your Score is: "
+    
+    puts "your Score is: ".red.bold
     require 'artii'
     a = Artii::Base.new
 
     puts a.asciify(score).colorize(:yellow)
-    
-    puts
-    puts "Anyway, here are the correct answers:".colorize(:blue)
-    puts "answers:"
-    puts 
+    cmp =  3*m/4.0
+    if score >= m/2.0 and score < cmp
+        puts "Decent Job.Keep it up".red.bold
+    elsif score >= 3.0*m/4.0
+        puts "Excellent Job".blue.bold
+    else
+        puts "Practice makes us perfect. Keep your chin up".cyan.bold
+    end
+        
+        puts
+    # puts "Anyway, here are the correct answers:".colorize(:blue)
+    # puts "answers:"
+    # puts 
     #puts answers
 
-    if m == 5 and mode == 't'
+    if m == 5 and mode != 'p'
         puts "The recent score is below. Compare your perforamnce wwith other's"
         File.open("scoreboard.txt",'a') do |line|
         # puts "The score card looks as below"
     
-                line.puts "#{name}:      #{score}"
+                line.puts "#{name}:      #{score}".blue.bold
 
         end
         File.readlines('scoreboard.txt').last(5).each do |line|
@@ -133,7 +139,7 @@ def continue(name)
 
         
     end
-    puts "Do you want to play more? press c to continue and e to exit"
+    puts "Do you want to play more? press c to continue and any other key to exit".cyan.on_red.bold
         q = gets.chomp
         if q == 'c'
             continue(name)
@@ -141,14 +147,5 @@ def continue(name)
 end
 continue(name)
 
-#a = Quiz()
-#print 'a'
-#item = qBank[rand(qBank.length)]
-# camp = ["This is blue".colorize(:blue), "This is blue".colorize(:red), "This is blue".colorize(:yellow)]
 
-# #puts "This is blue".colorize(:blue)
-# item = camp[rand(camp.length)]
-
-# puts item
-# puts "This is Australia"
 
