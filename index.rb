@@ -3,20 +3,21 @@ name1 = ARGV
 
 name = name1[0]
 puts name
+require 'colorize'
+require 'artii'
 if name == nil
-    puts "Please enter your name"
+    puts "Please enter your name".green.bold
     name = gets.chomp
 end
 #print name
 ARGV.clear
-require 'colorize'
-require 'artii'
+
 a = Artii::Base.new
 puts a.asciify('Quiz by Amrit Sagar Khanal').colorize(:blue)
 
 
 
-def Quiz(qBank)
+def Quiz(qBank,sn)
     
     item1 = qBank[rand(qBank.length)]
     item = item1.clone
@@ -26,7 +27,8 @@ def Quiz(qBank)
     item5[0,1] = ''
     x = item3[0,1] 
     
-    puts item5.colorize(:cyan).bold
+    print "q#{sn}:  ".yellow.bold
+    print item5.colorize(:cyan).bold
     
     a = gets.chomp
     # Error handling in case the user enters invalid response
@@ -35,9 +37,9 @@ def Quiz(qBank)
         a = gets.chomp
     end
     if  a == x
-        return [1,item4]
+        return [1,item4,x]
     else 
-        return [0,item4]
+        return [0,item4,x]
     end
 end
      
@@ -65,16 +67,18 @@ def continue(name)
             puts "How many questions do you want to take?".cyan.on_yellow.bold
             m = gets.chomp.to_i
             4/m
-        rescue
+        rescue 
            
         
-
-            while m > 5 or m < 1
+        end
+        while m > 5 or m < 1
         
                 puts "You entered invalid input. Please enter an integer between 1 to 5"
                 m = gets.chomp.to_i
-            end
         end
+        
+                
+        
     else
         m =  5
     end
@@ -88,11 +92,12 @@ def continue(name)
     qBA = []
     for i in 1..m
     # print "qBankO : #{qBankO}"
-        a = Quiz(qBank)
+        a = Quiz(qBank,i)
         
         score += a[0]
         
         qBank.delete(a[1])
+        answers.append(a[2])
         
     end
 
@@ -117,13 +122,14 @@ def continue(name)
     end
         
         puts
-    # puts "Anyway, here are the correct answers:".colorize(:blue)
-    # puts "answers:"
-    # puts 
-    #puts answers
+    puts "Anyway, here are the correct answers:".colorize(:blue).bold
+    puts "answers:".green.bold
+    for i in 0..m-1
+        puts "Q#{i+1}:      #{answers[i]}".cyan.bold
+    end
 
     if m == 5 and mode != 'p'
-        puts "The recent score is below. Compare your perforamnce wwith other's"
+        puts "The recent score is below. Compare your perforamnce wwith other players".red.bold
         File.open("scoreboard.txt",'a') do |line|
         # puts "The score card looks as below"
     
