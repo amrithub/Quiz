@@ -63,6 +63,26 @@
 
 | features            | Checklist                                                                                                                                                                                                                                                                                                         | Priority | deadline   |
 |---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|------------|
-| User Input          | * Deterrmine the data structure of input * Determine the range of user input * apply conditional statements * Apply for loop and while loop * Apply a method for a more effective design * Test the inputs with different users who    know nothing about my project.                                             | High     | 18/11/2019 |
-| Multimode           | * Determine number of modes. * Use if statement to switch to different modes. * Use different loops. * Use methods as required. * Test the modes with different users.                                                                                                                                            | low      | 19/11/2019 |
-| Perpetual operation | * Determine if perpetual operation is desirable or not. * Determine where to restart the execution. * Use if statement for to continually run the program. * Use a method to call the game as long as the user  wants. * Test for this feature with different people who are    not familiar to your application. | mdium    | 19/11/2019 |
+| User Input          | 
+* Deterrmine the data structure of input * Determine the range of user input 
+* apply conditional statements 
+* Apply for loop and while loop 
+* Apply a method for a more effective design 
+* Test the inputs with different users who    know nothing about my project.                                             | High     | 18/11/2019 |
+| Multimode           | 
+* Determine number of modes. 
+* Use if statement to switch to different modes. 
+* Use different loops. 
+* Use methods as required. 
+* Test the modes with different users.                                                                                                                                            | low      | 19/11/2019 |
+| Perpetual operation | 
+* Determine if perpetual operation is desirable or not. 
+* Determine where to restart the execution. 
+* Use if statement for to continually run the program. 
+* Use a method to call the game as long as the user  wants. 
+* Test for this feature with different people who are    not familiar to your application. | mdium    | 19/11/2019 |
+
+# **Control Flow Diagram:**
+Follow the link for control flow diagram of the application.
+https://www.draw.io/#Weffaeb3500157e5c%2FEFFAEB3500157E5C!330
+
