@@ -1,10 +1,14 @@
+require 'colorize'
+require 'artii'
+a = Artii::Base.new
+puts a.asciify('Quiz by Amrit Sagar Khanal').colorize(:blue)
+
 name1 = ARGV
 #name.to_s
 
 name = name1[0]
-puts name
-require 'colorize'
-require 'artii'
+puts name.blue.bold
+
 if name == nil
     puts "Please enter your name".green.bold
     name = gets.chomp
@@ -12,8 +16,6 @@ end
 #print name
 ARGV.clear
 
-a = Artii::Base.new
-puts a.asciify('Quiz by Amrit Sagar Khanal').colorize(:blue)
 
 
 
@@ -123,7 +125,7 @@ def continue(name)
         
         puts
     puts "Anyway, here are the correct answers:".colorize(:blue).bold
-    puts "answers:".green.bold
+    puts "correct answers:".green.bold
     for i in 0..m-1
         puts "Q#{i+1}:      #{answers[i]}".cyan.bold
     end
