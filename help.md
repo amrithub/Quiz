@@ -28,5 +28,12 @@ And run the bash script
 
 $ ./script.sh
 
+# **Features of the application:**
 
+Features:
+1. Multimode: You can enjoy two modes of this application. Either you can practice or participate in a tournament
+2. In practice mode, you can choose the numbers of questions which can be 10 in maximum.
+3. Perpetual operation: You can play as many times as you like with terminating the application
+4. User Input: The user is the one who enters the input regarding mode, number of questions adn a response for each multiple choice questions.
+5. The output has been customized with different colors and fonts for better visual effect.
 
