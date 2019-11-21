@@ -1,25 +1,28 @@
+# Ruby programme for terminal application named 'Quizc
+
 require 'colorize'
 require 'artii'
 a = Artii::Base.new
 puts a.asciify('Quiz by Amrit Sagar Khanal').colorize(:blue)
 
 name1 = ARGV
-#name.to_s
+
 
 name = name1[0]
-puts name.blue.bold
+if name1[0] != nil
+    puts name.blue.bold
 
-if name == nil
+else name == nil
     puts "Please enter your name".green.bold
     name = gets.chomp
 end
-#print name
+
 ARGV.clear
 
 
 
-
-def Quiz(qBank,sn)
+# Function definition to display the individual question and read the user's response followed by the user response
+def Quiz(qBank,sn) 
     
     item1 = qBank[rand(qBank.length)]
     item = item1.clone
@@ -44,7 +47,7 @@ def Quiz(qBank,sn)
         return [0,item4,x]
     end
 end
-     
+ # Function definition for loading the question bank, chose the mode, number of questions and calling 'Quiz'    
 def continue(name)
     qbank = []
     qBank = []
@@ -57,7 +60,7 @@ def continue(name)
         qBank[j] = qbank[i] + qbank[i+1]
         i += 2
     end
-    #qBank1 = qBank
+    
     score = 0
     
     puts "Press p for practice and any other key for tournament".blue.on_yellow.bold
@@ -93,7 +96,7 @@ def continue(name)
     answers = []
     qBA = []
     for i in 1..m
-    # print "qBankO : #{qBankO}"
+    
         a = Quiz(qBank,i)
         
         score += a[0]
@@ -103,8 +106,7 @@ def continue(name)
         
     end
 
-#print a
-    #puts "#{name},".colorize(:blue)
+
     require 'artii'
     a = Artii::Base.new
     puts a.asciify(name).colorize(:blue)
@@ -131,7 +133,7 @@ def continue(name)
     end
 
     if m == 5 and mode != 'p'
-        puts "The recent score is below. Compare your perforamnce wwith other players".red.bold
+        puts "The recent score is below. Compare your perforamnce with other players".red.bold
         File.open("scoreboard.txt",'a') do |line|
         # puts "The score card looks as below"
     
@@ -142,11 +144,8 @@ def continue(name)
             puts line
         end
     
-        
-
-
-        
-    end
+        end
+    # Option for user to continue the quiz
     puts "Do you want to play more? press c to continue and any other key to exit".cyan.on_red.bold
         q = gets.chomp
         if q == 'c'
